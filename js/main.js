@@ -15,7 +15,7 @@ function getPhoto(id) {
     desciption: 'just photo',
     likes: getRandomInt(15, 200),
     comments: getRandomInt(0, 200)
-  }
+  };
 }
 
 function getPhotosArray(size) {
