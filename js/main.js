@@ -1,1 +1,3 @@
-import {getPhotosArray} from './data.js';
+import {createPhotoElements} from './render.js'
+
+createPhotoElements();
