@@ -1,11 +1,11 @@
-import {getPhotosArray} from './data.js'
+import {getPhotosArray} from './data.js';
 
 function createPhotoElements(){
-  let frag = document.createDocumentFragment();
-  let temp = document.querySelector('#picture').content;
-  let imgs = getPhotosArray(20);
+  const frag = document.createDocumentFragment();
+  const temp = document.querySelector('#picture').content;
+  const imgs = getPhotosArray(20);
   for (const img of imgs) {
-    let post = temp.cloneNode(true);
+    const post = temp.cloneNode(true);
     post.querySelector('.picture__img').src = img.url;
     post.querySelector('.picture__comments').textContent = img.comments;
     post.querySelector('.picture__likes').textContent = img.likes;

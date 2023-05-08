@@ -1,3 +1,3 @@
-import {createPhotoElements} from './render.js'
+import {createPhotoElements} from './render.js';
 
 createPhotoElements();
