@@ -1,3 +1,5 @@
+import {makeListener, removeListener} from './effects.js';
+import {resize} from './scale.js';
 import {isEscKey} from './util.js';
 
 const uploadButton = document.querySelector('#upload-file');
@@ -22,12 +24,15 @@ function openUploadForm() {
   document.body.classList.add('modal-open');
   document.querySelector('.img-upload__overlay').classList.remove('hidden');
   document.addEventListener('keydown', formEscHandler);
+  makeListener();
 }
 
 function closeUploadForm() {
   document.body.classList.remove('modal-open');
   document.querySelector('.img-upload__overlay').classList.add('hidden');
   document.removeEventListener('keydown', formEscHandler);
+  removeListener();
+  resize(100);
   purge();
 }
 
