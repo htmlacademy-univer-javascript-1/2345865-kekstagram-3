@@ -8,4 +8,7 @@ function isShorter(str, size) {
   return str.length <= size;
 }
 
-export {getRandomInt, isShorter};
+function isEscKey(evt) {
+  return evt.key ==='Escape';
+}
+export {getRandomInt, isShorter, isEscKey};
