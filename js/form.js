@@ -31,8 +31,5 @@ function closeUploadForm() {
   purge();
 }
 
-//added opening function on downloadButton
 uploadButton.addEventListener('change', openUploadForm);
-
-//added closing function on cancelButton
 cancelButton.addEventListener('click', closeUploadForm);
