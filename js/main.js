@@ -1,5 +1,7 @@
-import {createPhotoElements} from './render.js';
 import './form.js';
 import './scale.js';
 import './effects.js';
-createPhotoElements();
+import './check.js';
+import {getData} from './api.js';
+
+getData();
