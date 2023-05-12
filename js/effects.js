@@ -2,13 +2,11 @@ const imgForm = document.querySelector('.img-upload__form');
 const preview = imgForm.querySelector('.img-upload__preview img');
 const effectButtons = document.querySelectorAll('.effects__radio');
 
-function removeFilter(evt) {
-  evt.preventDefault();
+function removeFilter() {
   preview.classList = [];
 }
 
 function changeFilter(evt) {
-  evt.preventDefault();
   const element = evt.target.value;
   preview.classList = [];
   preview.classList.add(`effects__preview--${element}`);

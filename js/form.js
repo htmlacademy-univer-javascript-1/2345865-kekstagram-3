@@ -6,6 +6,7 @@ const uploadButton = document.querySelector('#upload-file');
 const cancelButton = document.querySelector('#upload-cancel');
 const hashtag = document.querySelector('.text__hashtags');
 const comment = document.querySelector('.text__description');
+const uploadWindow = document.querySelector('.img-upload__overlay');
 
 function purge() {
   uploadButton.value = '';
@@ -22,19 +23,27 @@ function formEscHandler(evt) {
 
 function openUploadForm() {
   document.body.classList.add('modal-open');
-  document.querySelector('.img-upload__overlay').classList.remove('hidden');
+  uploadWindow.classList.remove('hidden');
   document.addEventListener('keydown', formEscHandler);
   makeListener();
 }
 
 function closeUploadForm() {
   document.body.classList.remove('modal-open');
-  document.querySelector('.img-upload__overlay').classList.add('hidden');
+  uploadWindow.classList.add('hidden');
   document.removeEventListener('keydown', formEscHandler);
   removeListener();
   resize(100);
   purge();
 }
 
+function hideUploadForm() {
+  uploadWindow.classList.add('hidden');
+  document.body.classList.remove('modal-open');
+  document.removeEventListener('keydown', formEscHandler);
+}
+
 uploadButton.addEventListener('change', openUploadForm);
 cancelButton.addEventListener('click', closeUploadForm);
+
+export {openUploadForm, closeUploadForm, hideUploadForm, uploadWindow};
